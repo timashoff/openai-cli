@@ -58,8 +58,8 @@ function findComand(str) {
   const firstWord = str.split(' ')[0]
   const restString = str.split(' ').slice(1).join(' ')
   if (firstWord === '-grammar' || firstWord === '-g') return `Is the grammar of the following sentence correct?: "${restString}"`
-  if (firstWord === '-перевод' || firstWord === '-п' || firstWord === '-ру') return `translate the following sentence into English: "${restString}"`
-  if (firstWord === '-translate' || firstWord === '-t' || firstWord === '-ru') return `translate the following sentence into Russian: "${restString}"`
+  if (firstWord === '-перевод' || firstWord === '-п' || firstWord === '-e') return `translate the following sentence into English: "${restString}"`
+  if (firstWord === '-translate' || firstWord === '-t') return `translate the following sentence into Russian: "${restString}"`
   else return str
 }
 
@@ -68,7 +68,7 @@ function showAllcomand() {
   .help (.h, -help, -h,) = help command
   .exit (:q, .q, /q, .й) = close the programm
   -grammar (-g) = check the grammar in english
-  -перевод (-п, -ру) = translate sentence into English
+  -перевод (-п, -e) = translate sentence into English
   -translate (-t, -ru) = translate into Russian
   `)
 }
