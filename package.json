@@ -1,0 +1,16 @@
+{
+  "name": "cli_ai",
+  "version": "1.0.1",
+  "description": "",
+  "main": "./bin/index.js",
+  "bin": {
+    "ai": "./bin/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.1.0"
+  }
+}
