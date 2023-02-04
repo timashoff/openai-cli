@@ -1,13 +1,18 @@
 {
   "name": "cli_ai",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "simple cli tools based on node.js and openai api",
   "main": "./bin/index.js",
   "bin": {
     "ai": "./bin/index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "openai",
+    "gpt3",
+    "cli-tools",
+    "node.js"
+  ],
+  "author": "Roman Timashoff <timashoff@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",

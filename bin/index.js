@@ -1,6 +1,5 @@
 #!/Users/timashoff/.nvm/versions/node/v19.6.0/bin/node
-
-// #!/usr/bin/env node;
+//#!/usr/bin/env node;
 
 const { Configuration, OpenAIApi } = require('openai')
 const path = require('node:path')
