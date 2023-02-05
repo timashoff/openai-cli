@@ -19,7 +19,7 @@ Understands prefixes of the type:
 
 ## how to install
 
-1. download repo
+1. download repo and `npm i`
 2. rename **.env.example** to **.env**
 3. add in **.env** your Openai API Key [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
 4. remove **.env** from the file **.gitignore**
@@ -29,6 +29,8 @@ Understands prefixes of the type:
 ### Known issues
 
 If you encounter difficulties, swap the first and second rows in the **index.js** file, or specify your version of Node.js
+
+use command `which node` in your cli to find out the Node.js path (on mac/linux)
 
 ### Find a bug?
 
