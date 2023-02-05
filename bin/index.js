@@ -8,11 +8,15 @@ const readline = require('node:readline')
 const { stdin: input, stdout: output } = require('node:process')
 const rl = readline.createInterface({ input, output })
 const key = process.env.KEY_API
+
+const yourName = 'timashoff'
+const aiName = 'ai'
+
 const configuration = new Configuration({ apiKey: key });
 const openai = new OpenAIApi(configuration);
 
 const prompt = () => {
-  rl.question('\n\x1b[32mtimashoff:\x1b[0m ', async (answer) => {
+  rl.question(`\n\x1b[32m${yourName}:\x1b[0m `, async (answer) => {
 
     if (answer === '.exit' || answer === ':q' || answer === '.q' || answer === '/q' || answer === '.й') {
       rl.close()
@@ -45,7 +49,7 @@ const prompt = () => {
     })
 
     const tokens = response.data.usage.total_tokens
-    console.log(`\n\x1b[32mai: \x1b[0m${response.data.choices[0].text.trim()}`, -tokens)
+    console.log(`\n\x1b[32m${aiName}: \x1b[0m${response.data.choices[0].text.trim()}`, -tokens)
 
     prompt()
   })
