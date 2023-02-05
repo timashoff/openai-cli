@@ -11,6 +11,7 @@ Understands prefixes of the type:
 - **-g** check the English grammar
 - **-t** translate into Russian
 - **-e** translate from Russian into English
+- **-l** make sentence more literary
 - **.exit** and **.help** commands
 
 ## image visualisation
@@ -29,8 +30,7 @@ Understands prefixes of the type:
 ### Known issues
 
 If you encounter difficulties, swap the first and second rows in the **index.js** file, or specify your version of Node.js
-
-use command `which node` in your cli to find out the Node.js path (on mac/linux)
+Use command `which node` in your cli to find out the Node.js path (on mac/linux)
 
 ### Find a bug?
 

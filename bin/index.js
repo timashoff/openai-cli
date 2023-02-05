@@ -64,6 +64,7 @@ function findComand(str) {
   if (firstWord === '-grammar' || firstWord === '-g') return `Is the grammar of the following sentence correct?: "${restString}"`
   if (firstWord === '-перевод' || firstWord === '-п' || firstWord === '-e') return `translate the following sentence into English: "${restString}"`
   if (firstWord === '-translate' || firstWord === '-t') return `translate the following sentence into Russian: "${restString}"`
+  if (firstWord === '-literary' || firstWord === '-l') return `make sentence more literary: "${restString}"`
   else return str
 }
 
@@ -74,5 +75,6 @@ function showAllcomand() {
   -grammar (-g) = check the grammar in english
   -перевод (-п, -e) = translate sentence into English
   -translate (-t, -ru) = translate into Russian
+  -literary (-l) = make sentence more literary
   `)
 }
