@@ -20,12 +20,13 @@ Understands prefixes of the type:
 
 ## how to install
 
-1. download repo and `npm i`
-2. rename **.env.example** to **.env**
-3. add in **.env** your Openai API Key [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
-4. remove **.env** from the file **.gitignore**
-5. `npm i -g` Install this app globally on your computer so you can run the application with the command **ai** from any location in the CLI
-6. enjoy!
+0. First of all, you need Node.js on your computer ( [https://nodejs.org/en/](https://nodejs.org/en/) )
+1. Download the repo and run `npm i`
+2. Rename **.env.example** file to **.env**
+3. Add in **.env** file your Openai API Key ( [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys) )
+4. Remove **.env** in the **.gitignore** file
+5. Run `npm i -g` to install this app globally on your computer so you can run the application with the command **ai** from any location in the CLI
+6. Enjoy!
 
 ### Known issues
 
