@@ -29,7 +29,6 @@ const prompt = () => {
       prompt()
     }
 
-
     const string = findComand(answer)
 
     if (!answer || string.split(' ').length < 3) {
@@ -38,22 +37,31 @@ const prompt = () => {
       return
     }
 
-    const response = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: string,
-      temperature: 1,
-      max_tokens: 250,
-      top_p: 1,
-      frequency_penalty: 0,
-      presence_penalty: 0,
-    })
+    let response
+    try {
+      response = await openai.createCompletion({
+        model: "text-davinci-003",
+        prompt: string,
+        temperature: 1,
+        max_tokens: 250,
+        top_p: 1,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+      })
+    } catch (error) {
+      console.log(`🤬 error: ${error.message}, trying to reconnect...`)
+      prompt()
+      return
+    }
 
     const tokens = response.data.usage.total_tokens
     console.log(`\n\x1b[32m${aiName}: \x1b[0m${response.data.choices[0].text.trim()}`, -tokens)
 
     prompt()
+
   })
 }
+
 prompt()
 
 
