@@ -13,9 +13,13 @@ Understands prefixes of the type:
 - **-e** translate from Russian into English
 - **-l** make sentence more literary
 - **.exit** and **.help** commands
+- error handling with reconnect
 
 ## image visualisation
 
+<img width="1199" alt="openai_sample" src="https://user-images.githubusercontent.com/83927854/216793557-f2d1321f-0c0b-4dfa-86ac-0b11cb3ede9c.png">
+
+error handling:
 <img width="1199" alt="openai_sample" src="https://user-images.githubusercontent.com/83927854/216793557-f2d1321f-0c0b-4dfa-86ac-0b11cb3ede9c.png">
 
 ## how to install
