@@ -21,7 +21,7 @@ Understands prefixes of the type:
 
 error handling:
 
-<img width="704" alt="error" src="https://user-images.githubusercontent.com/83927854/217783329-6da904d1-9cab-4eaf-82a8-20fd2fe02edb.png">
+<img width="1199" alt="error_hadle" src="https://user-images.githubusercontent.com/83927854/217785378-a4039a34-fff7-4d93-a0b6-05c193abe366.png">
 
 ## how to install
 
