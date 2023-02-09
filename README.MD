@@ -20,7 +20,7 @@ Understands prefixes of the type:
 <img width="1199" alt="openai_sample" src="https://user-images.githubusercontent.com/83927854/216793557-f2d1321f-0c0b-4dfa-86ac-0b11cb3ede9c.png">
 
 error handling:
-<img width="1199" alt="openai_sample" src="https://user-images.githubusercontent.com/83927854/216793557-f2d1321f-0c0b-4dfa-86ac-0b11cb3ede9c.png">
+<img width="704" alt="error" src="https://user-images.githubusercontent.com/83927854/217783329-6da904d1-9cab-4eaf-82a8-20fd2fe02edb.png">
 
 ## how to install
 
