@@ -1,12 +1,17 @@
-#!/Users/timashoff/.nvm/versions/node/v19.6.0/bin/node
-//#!/usr/bin/env node;
+#!/usr/local/bin/node
 
-const { Configuration, OpenAIApi } = require('openai')
-const path = require('node:path')
-require('dotenv').config({ path: path.join(__dirname, ".env") })
-const readline = require('node:readline')
-const { stdin: input, stdout: output } = require('node:process')
-const rl = readline.createInterface({ input, output })
+import { Configuration, OpenAIApi } from 'openai'
+import * as dotenv from 'dotenv'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { createInterface } from 'node:readline'
+import { stdin as input, stdout as output } from 'node:process'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+dotenv.config({ path: path.join(__dirname, ".env") })
+
+const rl = createInterface({ input, output })
 const key = process.env.KEY_API
 
 const yourName = 'timashoff'

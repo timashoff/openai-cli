@@ -35,7 +35,7 @@ error handling:
 
 ### Known issues
 
-If you encounter difficulties, swap the first and second rows in the **index.js** file, or specify your version of Node.js
+If you encounter difficulties, change the first row in the **index.js** file and specify your Node.js path directory.
 Use command `which node` in your cli to find out the Node.js path (on mac/linux)
 
 ### Find a bug?
