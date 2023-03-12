@@ -14,7 +14,7 @@ dotenv.config({ path: path.join(__dirname, ".env") })
 const rl = createInterface({ input, output })
 const key = process.env.KEY_API
 
-const yourName = 'timashoff'
+const yourName = 'user'
 const aiName = 'ai'
 
 const configuration = new Configuration({ apiKey: key });
@@ -44,11 +44,11 @@ const prompt = () => {
 
     let response
     try {
-      response = await openai.createCompletion({
-        model: "text-davinci-003",
-        prompt: string,
-        temperature: 1,
-        max_tokens: 250,
+      response = await openai.createChatCompletion({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: string }],
+        temperature: 0.7,
+        max_tokens: 1000,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,
@@ -60,7 +60,7 @@ const prompt = () => {
     }
 
     const tokens = response.data.usage.total_tokens
-    console.log(`\n\x1b[32m${aiName}: \x1b[0m${response.data.choices[0].text.trim()}`, -tokens)
+    console.log(`\n\x1b[32m${aiName}: \x1b[0m${response.data.choices[0].message.content.trim()}`, -tokens)
 
     prompt()
 

@@ -2,7 +2,7 @@
 
 ## short introducing
 
-This is a CLI utility that fetches the Openai API and uses text-davinci-003 model
+This is a CLI utility that fetches the Openai API (3.2.1 version) and uses a new gpt-3.5-turbo model that is optimized for chat at 1/10th the cost of the previous one
 
 The tool can be launched in the command line from any location by typing **ai**
 
@@ -35,8 +35,9 @@ error handling:
 
 ### Known issues
 
-If you encounter difficulties, change the first row in the **index.js** file and specify your Node.js path directory.
-Use command `which node` in your cli to find out the Node.js path (on mac/linux)
+- If you encounter difficulties, change the first row in the **index.js** file and specify your Node.js path directory. Use command `which node` in your cli to find out the Node.js path (on mac/linux)
+
+- If you have struggled during the update to the new **gpt-3.5-turbo** model, please check [this link](https://github.com/openai/openai-node/issues/81#issuecomment-1465167610)
 
 ### Find a bug?
 
