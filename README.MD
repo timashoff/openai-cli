@@ -8,12 +8,15 @@ The tool can be launched in the command line from any location by typing **ai**
 
 Understands prefixes of the type:
 
-- **-g** check the English grammar
-- **-t** translate into Russian
-- **-e** translate from Russian into English
-- **-l** make sentence more literary
-- **.exit** and **.help** commands
-- error handling with reconnect
+- -ch -c translate into Chinese
+- .clear .c clear the input history
+- -e -п translate into English
+- .exit .q /q :q .й close the programm
+- -g check the grammar
+- .help -help .h -h print help info
+- -l make a sentence more literary
+- -p show the Pinyin transcription
+- -t -ru translate into Russian
 
 ## image visualisation
 

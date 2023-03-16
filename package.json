@@ -1,6 +1,6 @@
 {
   "name": "cli_ai",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "simple cli tools based on node.js and openai api",
   "main": "./bin/index.js",
   "type": "module",
