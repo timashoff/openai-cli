@@ -1,6 +1,6 @@
 export const NAME = {
   ai: 'ai',
-  user: 'timashoff'
+  user: 'user'
 }
 
 export const COMMAND = {
@@ -24,7 +24,7 @@ export const COMMAND = {
   GRAMMAR: {
     key: ['-g'],
     description: 'check the grammar',
-    instruction: 'Check the grammar, correct the mistakes and typos in the following'
+    instruction: 'Check the grammar and correct typos in the following sentence'
   },
   TRANSLATE: {
     key: ['-t', '-ru'],
@@ -45,6 +45,11 @@ export const COMMAND = {
     key: ['-p'],
     description: 'show the Pinyin transcription',
     instruction: 'Provide the Pinyin transcription of the following sentence'
+  },
+  CEFR: {
+    key: ['-cefr'],
+    description: 'show CEFR levels',
+    instruction: 'correlate the following words with CEFR levels of difficulty'
   },
 }
 
