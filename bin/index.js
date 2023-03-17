@@ -57,11 +57,11 @@ const chatGPT = () => {
       response = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
         messages: [{ role: "user", content: string }],
-        temperature: 0.9,
+        temperature: 0.6,
         max_tokens: 1000,
         top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0.6,
+        frequency_penalty: 1,
+        presence_penalty: 1,
       })
     } catch (error) {
       console.log(`🤬 error: ${error.message}, trying to reconnect...`)
