@@ -46,6 +46,11 @@ export const COMMAND = {
     description: 'show the Pinyin transcription',
     instruction: 'Provide the Pinyin transcription of the following sentence'
   },
+  TRANSCRIPTION: {
+    key: ['-tr'],
+    description: 'show the English transcription',
+    instruction: 'show the English transcription of the following'
+  },
   CEFR: {
     key: ['-cefr'],
     description: 'show CEFR levels',
