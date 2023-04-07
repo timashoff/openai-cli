@@ -64,7 +64,8 @@ const chatGPT = () => {
         presence_penalty: 1,
       })
     } catch (error) {
-      console.log(`🤬 error: ${error.message}, trying to reconnect...`)
+      console.log(`\n🤬 error: ${error.message}, trying to reconnect...`)
+      console.timeEnd('response')
       chatGPT()
       return
     }
