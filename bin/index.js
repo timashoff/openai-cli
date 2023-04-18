@@ -11,7 +11,7 @@ import { commandExists } from '../utils.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-dotenv.config({ path: path.join(__dirname, ".env") })
+dotenv.config({ path: path.join(__dirname, '.env') })
 
 const rl = createInterface({ input, output })
 const key = process.env.KEY_API
@@ -19,15 +19,14 @@ const key = process.env.KEY_API
 const userName = NAME.user
 const aiName = NAME.ai
 
-const configuration = new Configuration({ apiKey: key });
-const openai = new OpenAIApi(configuration);
+const configuration = new Configuration({ apiKey: key })
+const openai = new OpenAIApi(configuration)
 
 const userInput = '\n' + COLOR.green + userName + ': ' + COLOR.reset
 const aiOutput = '\n' + COLOR.green + aiName + ': ' + COLOR.reset
 
 const chatGPT = () => {
   rl.question(userInput, async (prompt) => {
-
     if (commandExists(prompt, COMMAND.EXIT.key)) {
       rl.close()
       return
@@ -47,7 +46,7 @@ const chatGPT = () => {
     const string = findComand(prompt)
 
     if (!prompt || string.split(' ').length < 3) {
-      console.log('need 3 more words');
+      console.log('need 3 more words')
       chatGPT()
       return
     }
@@ -55,8 +54,8 @@ const chatGPT = () => {
     let response
     try {
       response = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: string }],
+        model: 'gpt-3.5-turbo',
+        messages: [{ role: 'user', content: string }],
         temperature: 0.6,
         max_tokens: 1000,
         top_p: 1,
@@ -76,23 +75,25 @@ const chatGPT = () => {
     console.timeEnd('response')
     if (response.data.choices[0].message.content.length > 300) console.log(COLOR.cyan + '══════')
     chatGPT()
-
   })
 }
 
 chatGPT()
 
-
-//helpers 
+//helpers
 function help(obj) {
   const sortedKeys = Object.keys(obj).sort((a, b) => a.localeCompare(b))
   const sortedObj = {}
-  sortedKeys.forEach(key => {
-    sortedObj[key] = obj[key];
+  sortedKeys.forEach((key) => {
+    sortedObj[key] = obj[key]
   })
   console.log('\n')
   for (let prop in sortedObj) {
-    console.log(`${prop.toLowerCase()} ${COLOR.cyan}${sortedObj[prop].key.join(' ')}${COLOR.reset}  ${sortedObj[prop].description}`)
+    console.log(
+      `${prop.toLowerCase()} ${COLOR.cyan}${sortedObj[prop].key.join(' ')}${COLOR.reset}  ${
+        sortedObj[prop].description
+      }`
+    )
   }
 }
 
