@@ -51,9 +51,9 @@ const chatGPT = () => {
       return
     }
     console.time('response')
-    let response
+
     try {
-      response = await openai.createChatCompletion({
+      const response = await openai.createChatCompletion({
         model: 'gpt-3.5-turbo',
         messages: [{ role: 'user', content: string }],
         temperature: 0.6,
@@ -62,19 +62,17 @@ const chatGPT = () => {
         frequency_penalty: 1,
         presence_penalty: 1,
       })
+      const tokens = response.data.usage.total_tokens
+      console.log(aiOutput + response.data.choices[0].message.content.trim())
+      console.log('$:', -tokens)
+      if (response.data.choices[0].message.content.length > 300) console.log(COLOR.cyan + '══════')
     } catch (error) {
       console.log(`\n🤬 error: ${error.message}, trying to reconnect...`)
+      return
+    } finally {
       console.timeEnd('response')
       chatGPT()
-      return
     }
-
-    const tokens = response.data.usage.total_tokens
-    console.log(aiOutput + response.data.choices[0].message.content.trim())
-    console.log('$:', -tokens)
-    console.timeEnd('response')
-    if (response.data.choices[0].message.content.length > 300) console.log(COLOR.cyan + '══════')
-    chatGPT()
   })
 }
 
