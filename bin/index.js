@@ -64,8 +64,8 @@ const chatGPT = () => {
       })
       const tokens = response.data.usage.total_tokens
       console.log(aiOutput + response.data.choices[0].message.content.trim())
+      if (response.data.choices[0].message.content.length > 300) console.log(COLOR.cyan + '══════' + COLOR.reset)
       console.log('$:', -tokens)
-      if (response.data.choices[0].message.content.length > 300) console.log(COLOR.cyan + '══════')
     } catch (error) {
       console.log(`\n🤬 error: ${error.message}, trying to reconnect...`)
       return
