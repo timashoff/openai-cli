@@ -63,8 +63,9 @@ const chatGPT = () => {
         presence_penalty: 1,
       })
       const tokens = response.data.usage.total_tokens
-      console.log(aiOutput + response.data.choices[0].message.content.trim())
-      if (response.data.choices[0].message.content.length > 300) console.log(COLOR.cyan + '══════' + COLOR.reset)
+      const resContent = response.data.choices[0].message.content
+      console.log(aiOutput + resContent.trim())
+      if (resContent.length > 300) console.log(COLOR.cyan + '══════' + COLOR.reset)
       console.log('$:', -tokens)
     } catch (error) {
       console.log(`\n🤬 error: ${error.message}, trying to reconnect...`)
@@ -82,15 +83,14 @@ chatGPT()
 function help(obj) {
   const sortedKeys = Object.keys(obj).sort((a, b) => a.localeCompare(b))
   const sortedObj = {}
-  sortedKeys.forEach((key) => {
-    sortedObj[key] = obj[key]
-  })
+  sortedKeys.forEach((key) => (sortedObj[key] = obj[key]))
   console.log('\n')
   for (let prop in sortedObj) {
+    const command = COLOR.cyan + sortedObj[prop].key.sort().reverse().join('  ') + COLOR.reset
     console.log(
-      `${prop.toLowerCase()} ${COLOR.cyan}${sortedObj[prop].key.join(' ')}${COLOR.reset}  ${
-        sortedObj[prop].description
-      }`
+      prop.toLowerCase().padEnd(15, ' '),
+      command.padEnd(35, ' '),
+      sortedObj[prop].description
     )
   }
 }
@@ -99,7 +99,8 @@ function findComand(str) {
   const firstWord = str.split(' ')[0]
   const restString = str.split(' ').slice(1).join(' ')
   for (let prop in COMMAND) {
-    if (commandExists(firstWord, COMMAND[prop].key)) return `${COMMAND[prop].instruction}: "${restString}"`
+    if (commandExists(firstWord, COMMAND[prop].key))
+      return `${COMMAND[prop].instruction}: "${restString}"`
   }
   return str
 }
