@@ -6,18 +6,7 @@ This is a CLI utility that fetches the Openai API (3.2.1 version) and uses a new
 
 The tool can be launched in the command line from any location by typing **ai**
 
-Type `.help` to see all available commands:
-
-- cefr -cefr show CEFR levels
-- chinese -ch -c translate into Chinese
-- clear .clear .c clear the input history
-- english -e -п translate into English
-- exit .exit .q /q :q .й close the programm
-- grammar -g check the grammar
-- help .help -help .h -h print help info
-- literary -l make a sentence more literary
-- pinyin -p show the Pinyin transcription
-- translate -t -ru translate into Russian
+Type `:h` or `.help` to see all available commands
 
 You can easily add your own commands. Just open `const.js` file and update the COMMAND object.
 
@@ -33,7 +22,7 @@ export const COMMAND = {
     description: 'show CEFR levels', //help info
     instruction: 'correlate the following words with CEFR levels of difficulty', //verbal request to AI
   },
-};
+}
 ```
 
 ## how does it look in cli?
@@ -41,7 +30,6 @@ export const COMMAND = {
 Added the counter that shows the **number of tokens** spent and the corresponding **time of request**
 
 <img width="1200" alt="Screenshot 2023-03-17 at 1 33 59 PM" src="https://user-images.githubusercontent.com/83927854/225841462-8b745592-7fc5-46fc-9ae8-f745e7cdc697.png">
-
 
 Error handling:
 

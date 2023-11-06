@@ -13,7 +13,7 @@ export const COMMAND = {
     description: 'print help info',
   },
   CLEAR: {
-    key: ['.clear', '.c', ':c'],
+    key: ['.clear', '.сд', ':cl'],
     description: 'clear the input history',
   },
   LITERARY: {
@@ -24,7 +24,7 @@ export const COMMAND = {
   GRAMMAR: {
     key: ['-g', ':g'],
     description: 'check the grammar',
-    instruction: 'Check the grammar and correct typos in the following sentence',
+    instruction: 'check the grammar',
   },
   TRANSLATE: {
     key: ['-t', ':ru', ':t'],
@@ -32,12 +32,12 @@ export const COMMAND = {
     instruction: 'translate the following sentence into Russian',
   },
   ENGLISH: {
-    key: ['-e', '-п', ':e'],
+    key: ['-e', 'ЖЖ', ':e', 'жж'],
     description: 'translate into English',
     instruction: 'translate the following sentence into English',
   },
   CHINESE: {
-    key: ['-ch', ':ch'],
+    key: ['-ch', ':c', 'с'],
     description: 'translate into Chinese',
     instruction:
       'Translate the following sentence into Chinese and provide the Pinyin transcription',
@@ -50,7 +50,8 @@ export const COMMAND = {
   TRANSCRIPTION: {
     key: ['-tr', ':tr'],
     description: 'show the English transcription',
-    instruction: 'show the English transcription of the following',
+    instruction:
+      'show the English transcription of the following sentence. The response should only contain the transcription',
   },
   CEFR: {
     key: ['-cefr', ':cefr'],

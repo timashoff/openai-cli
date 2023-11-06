@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/env node
 
 import { Configuration, OpenAIApi } from 'openai'
 import * as dotenv from 'dotenv'
@@ -52,16 +52,23 @@ const chatGPT = () => {
     }
     console.time('response')
 
+    const timeout = (ms) =>
+      new Promise((resolve, reject) =>
+        setTimeout(() => reject(new Error('Response took too long')), ms)
+      )
+
+    const fetchOpenAi = openai.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages: [{ role: 'user', content: string }],
+      temperature: 0.6,
+      max_tokens: 1000,
+      top_p: 1,
+      frequency_penalty: 1,
+      presence_penalty: 1,
+    })
+
     try {
-      const response = await openai.createChatCompletion({
-        model: 'gpt-3.5-turbo',
-        messages: [{ role: 'user', content: string }],
-        temperature: 0.6,
-        max_tokens: 1000,
-        top_p: 1,
-        frequency_penalty: 1,
-        presence_penalty: 1,
-      })
+      const response = await Promise.race([fetchOpenAi, timeout(10000)])
       const tokens = response.data.usage.total_tokens
       const resContent = response.data.choices[0].message.content
       console.log(aiOutput + resContent.trim())
